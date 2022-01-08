@@ -245,12 +245,14 @@ function changeFooterText() {
             rules += "" + i + ". " + selected[i - 1] + "\n";
         }
         console.log(rules);
-        $.ajax({
-            url: "https://europe-central2-merge-life-337617.cloudfunctions.net/merge-life",
-            body: rules,
-            success: function(result){
-                location.href = 'fixed-survey.html';
-            }});
+        // $.ajax({
+        //     url: "https://europe-central2-merge-life-337617.cloudfunctions.net/merge-life",
+        //     body: rules,
+        //     success: function(result){
+                
+        //     }});
+
+        location.href = 'fixed-survey.html';
     }
 }
 
