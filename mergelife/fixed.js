@@ -244,10 +244,13 @@ function changeFooterText() {
         for(var i = 1; i <= selected.length; i++) {
             rules += "" + i + ". " + selected[i - 1] + "\n";
         }
-        alert(rules);
         console.log(rules);
-        //window.location.replace("");
-        location.href = 'fixed-survey.html';
+        $.ajax({
+            url: "https://europe-central2-merge-life-337617.cloudfunctions.net/merge-life",
+            body: rules,
+            success: function(result){
+                location.href = 'fixed-survey.html';
+            }});
     }
 }
 
