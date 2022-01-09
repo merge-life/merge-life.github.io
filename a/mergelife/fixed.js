@@ -101,6 +101,9 @@ function generateRules() {
     var parent1 = mutations[input1 - 1];
     var parent2 = mutations[input2 - 1];
 
+    selected.push(mutations[input1 - 1]);
+    selected.push(mutations[input2 - 1]);
+
     var options = [0, 1, 2, 3, 5, 6, 7];
     shuffle(options);
 
@@ -110,13 +113,8 @@ function generateRules() {
     mutations[0] = parent1;
     mutations[4] = parent2;
 
-    selected.push(parent1);
-    selected.push(parent2);
-    console.log(selected);
-
     generateCrossOvers(parent1Split, parent2Split, options);
     generateMutations(parent1, parent2);
-    console.log(mutations);
 }
 
 function generateMutations(parent1, parent2) {
