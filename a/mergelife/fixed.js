@@ -239,20 +239,19 @@ function changeFooterText() {
     document.getElementById('random-counter').innerText = "" + count + " out of 10";
 
     if (count > 10) {
-        var rules = "Selected Rules: \n\n";
+        var rules = "";
 
         for(var i = 1; i <= selected.length; i++) {
-            rules += "" + i + ". " + selected[i - 1] + "\n";
+            rules += "" + selected[i - 1] + ",";
         }
+        
         console.log(rules);
-        // $.ajax({
-        //     url: "https://europe-central2-merge-life-337617.cloudfunctions.net/merge-life",
-        //     body: rules,
-        //     success: function(result){
-                
-        //     }});
 
-        location.href = 'fixed-survey.html';
+        $.ajax({
+            url: "https://europe-central2-merge-life-337617.cloudfunctions.net/merge-life?rules=" + rules,
+            success: function(result){
+                location.href = 'fixed-survey.html';
+        }});
     }
 }
 
