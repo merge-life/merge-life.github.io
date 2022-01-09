@@ -239,7 +239,7 @@ function changeFooterText() {
     document.getElementById('random-counter').innerText = "" + count + " out of 10";
 
     if (count > 10) {
-        var rules = "SET-A-";
+        var rules = "SET-B-";
 
         for(var i = 1; i <= selected.length; i++) {
             rules += "" + selected[i - 1] + ",";
