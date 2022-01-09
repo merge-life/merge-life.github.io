@@ -101,8 +101,10 @@ function generateRules() {
     var parent1 = mutations[input1 - 1];
     var parent2 = mutations[input2 - 1];
 
-    selected.push(mutations[input1 - 1]);
-    selected.push(mutations[input2 - 1]);
+    var prefix1 = input1 == 0 ? 'parent': input1 % 2 == 0 ? 'mutation' : 'crossover';
+    var prefix2 = input2 == 0 ? 'parent': input2 % 2 == 0 ? 'mutation' : 'crossover';
+    selected.push(prefix1 + "-" + mutations[input1 - 1]);
+    selected.push(prefix2 + "-" + mutations[input2 - 1]);
 
     var options = [0, 1, 2, 3, 5, 6, 7];
     shuffle(options);
